@@ -1,6 +1,4 @@
 ## hi! i'm *zeekay*.
-i ♥ [hacking][github] and [music][soundcloud].
-
 wanna chat? feeling a bit adventurous?
 
     curl http://whatit.is/say-hi | python
