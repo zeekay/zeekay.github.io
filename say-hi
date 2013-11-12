@@ -1,0 +1,54 @@
+#!/usr/bin/env python2
+import os
+import select
+import signal
+import socket
+import sys
+import time
+
+irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+if not sys.stdin.isatty():
+    sys.stdin = open('/dev/tty')
+
+def hello():
+    irc.send('PRIVMSG zeekay :hello, i am from the internet!\r\n')
+
+def goodbye(*args):
+    irc.send('DISCONNECT')
+    print '\nbye!'
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, goodbye)
+
+print 'Connecting... (press CTRL-C to exit)'
+irc.connect(('irc.freenode.net', 6667))
+irc.send('NICK i_am_%s\r\n' % os.getlogin())
+irc.send('USER so irc.freenode.net bla :so\r\n')
+
+while True:
+    read, write, error = select.select([sys.stdin, irc],[],[])
+
+    for i in read:
+        if i == sys.stdin:
+            irc.send('PRIVMSG zeekay :%s\r\n' % i.readline())
+            sys.stdout.write('> ')
+            sys.stdout.flush()
+
+        elif i == irc:
+            buffer = i.recv(1024)
+            for line in buffer.splitlines():
+                try:
+                    _, info, line = line.split(':', 2)
+                except ValueError:
+                    break
+
+                server, type = info.split(' ')[:2]
+                if type == 'PRIVMSG':
+                    sys.stdout.write('\x08' * 2)
+                    sys.stdout.write('< %s\n> ' % line)
+                    sys.stdout.flush()
+
+                elif type == 'NOTICE':
+                    hello()
+    time.sleep(0.01)
