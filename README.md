@@ -1,18 +1,17 @@
 I build web applications, hack on open source code, drink too much coffee, and make music.
 
-You can find me on...
+Wanna get social? I'm zeekay:
 
-- [Twitter][twitter]
 - [GitHub][github]
-- [Bitbucket][bitbucket]
+- [LinkedIn][linkedin]
 - [Stack Overflow][stackoverflow]
-- [Forrst][forrst]
+- [Twitter][twitter]
 
-I've been known to stalk the [underbelly of the internet][irc] (and elsewhere) as `zeekay`.
+Wanna chat?
 
-[twitter]: https://twitter.com/zeekay
-[github]: https://github.com/zeekay
-[bitbucket]: https://bitbucket.org/zeekay
+    curl http://monoid.io/say-hi | python
+
+[github]:        https://github.com/zeekay
+[linkedin]:      https://www.linkedin.com/in/zeekay
 [stackoverflow]: http://stackoverflow.com/users/641766/zeekay
-[forrst]: https://forrst.com/people/zeekay
-[irc]: http://en.wikipedia.org/wiki/Internet_Relay_Chat
+[twitter]:       https://twitter.com/zeekay

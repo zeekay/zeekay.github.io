@@ -1,6 +1,6 @@
 {
   "name": "zeekay.github.com",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,6 @@
   "license": "BSD",
   "description": "I build web applications, hack on open source code, drink too much coffee, and make music.",
   "dependencies": {
-    "brief": "~0.5.2"
+    "brief": "~0.6.1"
   }
 }
