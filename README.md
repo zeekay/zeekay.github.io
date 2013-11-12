@@ -1,4 +1,6 @@
-hi, i'm *zeekay*. i ♥ coffee, [music][soundcloud], and [hacking][github].
+### hi! i'm *zeekay*.
+
+#### i ♥ [hacking][github] and [music][soundcloud].
 
 wanna chat? feeling a bit adventurous?
 
@@ -8,11 +10,11 @@ wanna hire me? contact [monoid][monoid].
 
 wanna be social?
 
-[github][github]
-[linkedin][linkedin]
-[soundcloud][soundcloud]
-[stackoverflow][stackoverflow]
-[twitter][twitter]
+- [github][github]
+- [linkedin][linkedin]
+- [soundcloud][soundcloud]
+- [stackoverflow][stackoverflow]
+- [twitter][twitter]
 
 [github]:        https://github.com/zeekay
 [linkedin]:      https://www.linkedin.com/in/zeekay
