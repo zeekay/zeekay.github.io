@@ -9,7 +9,7 @@ Wanna get social? I'm zeekay:
 
 Wanna chat?
 
-    curl http://monoid.io/say-hi | python
+    curl http://whatit.is/say-hi | python
 
 [github]:        https://github.com/zeekay
 [linkedin]:      https://www.linkedin.com/in/zeekay
