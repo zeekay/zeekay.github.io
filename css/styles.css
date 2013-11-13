@@ -160,9 +160,10 @@ header ul a strong {
 }
 
 section {
-  width:500px;
-  float:right;
-  padding-bottom:50px;
+  width: 600px;
+  float: right;
+  padding-bottom: 50px;
+  margin-top: -15px;
 }
 
 small {
