@@ -1,15 +1,11 @@
 #!/usr/bin/env python2
-import os
-import select
-import signal
-import socket
-import sys
-import time
+import os, select, signal, socket, sys, time
 
 irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+username = os.getlogin()
+hostname = socket.gethostname()
 
-if not sys.stdin.isatty():
-    sys.stdin = open('/dev/tty')
+if not sys.stdin.isatty(): sys.stdin = open('/dev/tty')
 
 def hello():
     irc.send('PRIVMSG zeekay :hello, i am from the internet!\r\n')
@@ -21,17 +17,17 @@ def goodbye(*args):
 
 signal.signal(signal.SIGINT, goodbye)
 
-print 'Connecting... (press CTRL-C to exit)'
+print 'Hi {0}! Please wait while I connect your call... (press CTRL-C to exit)'.format(username)
 irc.connect(('irc.freenode.net', 6667))
-irc.send('NICK i_am_%s\r\n' % os.getlogin())
-irc.send('USER so irc.freenode.net bla :so\r\n')
+irc.send('NICK i_am_{0}\r\n'.format(username))
+irc.send('USER {0} {1} irc.freenode.net :{0}\r\n'.format(username, hostname))
 
 while True:
     read, write, error = select.select([sys.stdin, irc],[],[])
 
     for i in read:
         if i == sys.stdin:
-            irc.send('PRIVMSG zeekay :%s\r\n' % i.readline())
+            irc.send('PRIVMSG zeekay :{0}\r\n'.format(i.readline()))
             sys.stdout.write('> ')
             sys.stdout.flush()
 
@@ -46,7 +42,7 @@ while True:
                 server, type = info.split(' ')[:2]
                 if type == 'PRIVMSG':
                     sys.stdout.write('\x08' * 2)
-                    sys.stdout.write('< %s\n> ' % line)
+                    sys.stdout.write('< {0}\n> '.format(line))
                     sys.stdout.flush()
 
                 elif type == 'NOTICE':
