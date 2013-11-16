@@ -1,7 +1,7 @@
 ## hi! i'm *zeekay*.
 wanna chat? feeling a bit adventurous?
 
-    curl http://zeekay.io/say-hi | python
+    curl zeekay.io/say-hi | python
 
 wanna be social?
 
