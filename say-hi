@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 #
 # Minimal IRC client. Compatible with Python 2 and 3.
-import os, select, signal, socket, sys, time
+import os, select, signal, socket, sys
 
-username = os.getlogin()
+try:    username = os.getlogin()
+except: username = 'unknown'
+
 hostname = socket.gethostname()
 irc      = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
