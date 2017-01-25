@@ -12,6 +12,6 @@
   "license": "BSD",
   "description": "I build web applications, hack on open source code, drink too much coffee, and make music.",
   "dependencies": {
-    "brief": "~0.6.1"
+    "brief": "~1.1.0"
   }
 }
