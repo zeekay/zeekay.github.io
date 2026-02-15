@@ -1,40 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Z | Open Sourceror</title>
-    <meta name="description" content="Cypherpunk building decentralized intelligence. CEO at Hanzo AI, Chairman of LUX, Architect of ZOO." />
-    <meta name="author" content="Z" />
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Z | Open Sourceror" />
-    <meta property="og:description" content="Cypherpunk building decentralized intelligence. CEO at Hanzo AI, Chairman of LUX, Architect of ZOO." />
-    <meta property="og:image" content="/og-image.png" />
-    <meta property="og:url" content="https://zeekay.github.io" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@zeekay" />
-    <meta name="twitter:title" content="Z | Open Sourceror" />
-    <meta name="twitter:description" content="Cypherpunk building decentralized intelligence." />
-    <meta name="twitter:image" content="/og-image.png" />
-    
-    <!-- Theme -->
-    <meta name="theme-color" content="#0a0a0a" />
-    <script type="module" crossorigin src="/assets/index-JOu-V94N.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dlaflh8L.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Z | Open Sourceror</title>
+  <meta name="description" content="Building decentralized intelligence across AI, blockchain, and quantum. CEO at Hanzo AI, Chairman of LUX, Founder of ZOO." />
+  <meta name="author" content="Z" />
 
-  <body id="root" style="margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; overflow: hidden;">
-  </body>
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Z | Open Sourceror" />
+  <meta property="og:description" content="Building decentralized intelligence across AI, blockchain, and quantum." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:url" content="https://zeekay.io" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@zeekay" />
+  <meta name="twitter:title" content="Z | Open Sourceror" />
+  <meta name="twitter:description" content="Building decentralized intelligence across AI, blockchain, and quantum." />
+  <meta name="twitter:image" content="/og-image.png" />
+
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg2: #111;
+      --bg3: #181818;
+      --border: #222;
+      --text: #e0e0e0;
+      --text2: #888;
+      --text3: #555;
+      --accent: #fff;
+      --green: #3fb950;
+      --red: #f85149;
+      --blue: #58a6ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero { padding: 80px 0 40px; text-align: center; }
+
+    .avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.02em; color: var(--accent); }
+    .hero .tagline { color: var(--text2); font-size: 0.95rem; margin-top: 8px; }
+
+    .hero .links { margin-top: 16px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero .links a { color: var(--text2); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .hero .links a:hover { color: var(--accent); }
+    .hero .links a::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--text3); margin-right: 6px; vertical-align: middle; }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 40px 0;
+    }
+    .stat { background: var(--bg2); padding: 20px 16px; text-align: center; }
+    .stat .value { font-size: 1.5rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .stat .label { font-size: 0.7rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+
+    /* Section */
+    section { margin: 48px 0; }
+    section h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text2); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+    /* Heatmap */
+    .heatmap-wrap { overflow-x: auto; padding: 8px 0; }
+    .heatmap { display: flex; gap: 2px; }
+    .heatmap-week { display: flex; flex-direction: column; gap: 2px; }
+    .heatmap-day { width: 10px; height: 10px; border-radius: 2px; background: var(--bg3); }
+    .heatmap-day.l1 { background: #0e4429; }
+    .heatmap-day.l2 { background: #006d32; }
+    .heatmap-day.l3 { background: #26a641; }
+    .heatmap-day.l4 { background: #39d353; }
+
+    /* Yearly bars */
+    .yearly-grid { display: flex; gap: 4px; align-items: flex-end; height: 160px; padding: 0 0 24px; position: relative; }
+    .year-col { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
+    .year-bar { width: 100%; max-width: 48px; border-radius: 3px 3px 0 0; background: var(--green); transition: opacity 0.2s; }
+    .year-bar:hover { opacity: 0.8; }
+    .year-label { font-size: 0.6rem; color: var(--text3); position: absolute; bottom: -20px; transform: rotate(-45deg); white-space: nowrap; }
+    .year-tip {
+      display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+      background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px;
+      font-size: 0.75rem; white-space: nowrap; z-index: 10; color: var(--text);
+    }
+    .year-col:hover .year-tip { display: block; }
+
+    /* Research grid */
+    .research-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+    }
+    .rcard { background: var(--bg2); padding: 20px; transition: background 0.2s; }
+    .rcard:hover { background: var(--bg3); }
+    .rcard h3 { font-size: 0.9rem; color: var(--accent); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .rcard h3 .tag { font-size: 0.65rem; padding: 2px 6px; border-radius: 3px; background: var(--bg); color: var(--text2); font-weight: 400; }
+    .rcard p { font-size: 0.8rem; color: var(--text2); margin-bottom: 10px; line-height: 1.5; }
+    .rcard .pjs { display: flex; flex-wrap: wrap; gap: 4px; }
+    .rcard .pjs a {
+      font-size: 0.7rem; color: var(--text2); text-decoration: none;
+      padding: 2px 8px; border-radius: 3px; background: var(--bg); border: 1px solid var(--border); transition: all 0.2s;
+    }
+    .rcard .pjs a:hover { color: var(--accent); border-color: var(--text3); }
+
+    /* Org grid */
+    .org-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+    }
+    .org-card { background: var(--bg2); padding: 16px; text-decoration: none; transition: background 0.2s; display: block; }
+    .org-card:hover { background: var(--bg3); }
+    .org-card .name { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+    .org-card .role { font-size: 0.7rem; color: var(--text3); margin-top: 2px; }
+    .org-card .desc { font-size: 0.75rem; color: var(--text2); margin-top: 6px; line-height: 1.4; }
+
+    /* DOW */
+    .dow-grid { display: flex; gap: 4px; align-items: flex-end; height: 80px; }
+    .dow-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .dow-bar { width: 100%; max-width: 60px; border-radius: 3px 3px 0 0; background: var(--blue); opacity: 0.7; }
+    .dow-label { font-size: 0.65rem; color: var(--text3); }
+
+    /* Activity */
+    .activity-item {
+      display: grid; grid-template-columns: 80px 1fr auto; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; align-items: baseline;
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-item .date { color: var(--text3); font-size: 0.75rem; }
+    .activity-item .repo { color: var(--blue); }
+    .activity-item .msg { color: var(--text2); }
+    .activity-item .loc { font-size: 0.7rem; white-space: nowrap; }
+    .loc .add { color: var(--green); }
+    .loc .del { color: var(--red); }
+
+    /* Repos table */
+    .repo-row {
+      display: grid; grid-template-columns: 1fr 80px 90px 120px; gap: 8px;
+      padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; align-items: center;
+    }
+    .repo-row:last-child { border-bottom: none; }
+    .repo-row a { color: var(--blue); text-decoration: none; }
+    .repo-row a:hover { text-decoration: underline; }
+    .repo-row .c { color: var(--text2); text-align: right; }
+    .repo-row .d { color: var(--text3); font-size: 0.7rem; text-align: right; }
+
+    /* Footer */
+    footer { margin-top: 60px; padding: 24px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text3); font-size: 0.75rem; }
+    footer a { color: var(--text2); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 0 24px; }
+      .hero h1 { font-size: 2rem; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .research-grid { grid-template-columns: 1fr; }
+      .org-grid { grid-template-columns: repeat(2, 1fr); }
+      .activity-item { grid-template-columns: 70px 1fr; }
+      .activity-item .loc { display: none; }
+      .repo-row { grid-template-columns: 1fr 60px; }
+      .repo-row .d, .repo-row .loc { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/285707?v=4" alt="Z" />
+      <h1>Z</h1>
+      <div class="tagline">Open Sourceror. Building decentralized intelligence across AI, blockchain, and quantum.</div>
+      <div class="links">
+        <a href="https://github.com/zeekay">GitHub</a>
+        <a href="https://hanzo.ai">Hanzo AI</a>
+        <a href="https://lux.network">LUX</a>
+        <a href="https://zoo.ngo">ZOO</a>
+        <a href="https://zenlm.org">Zen LM</a>
+        <a href="https://huggingface.co/zenlm">HuggingFace</a>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat"><div class="value" id="s-commits">--</div><div class="label">Commits</div></div>
+      <div class="stat"><div class="value" id="s-years">--</div><div class="label">Years</div></div>
+      <div class="stat"><div class="value" id="s-repos">--</div><div class="label">Repos</div></div>
+      <div class="stat"><div class="value" id="s-lines">--</div><div class="label">Net Lines</div></div>
+      <div class="stat"><div class="value" id="s-active">--</div><div class="label">Active Days</div></div>
+      <div class="stat"><div class="value" id="s-streak">--</div><div class="label">Best Streak</div></div>
+    </div>
+
+    <section>
+      <h2>Contributions</h2>
+      <div class="heatmap-wrap"><div class="heatmap" id="heatmap"></div></div>
+    </section>
+
+    <section>
+      <h2>Yearly Output</h2>
+      <div class="yearly-grid" id="yearly"></div>
+    </section>
+
+    <section>
+      <h2>Commits by Day</h2>
+      <div class="dow-grid" id="dow"></div>
+    </section>
+
+    <section>
+      <h2>Research</h2>
+      <div class="research-grid">
+        <div class="rcard">
+          <h3>AI & Foundation Models <span class="tag">hanzoai / zenlm</span></h3>
+          <p>Frontier AI from model weights to production. Autonomous agents, LLM infrastructure, open models 0.6B&ndash;1T+ params.</p>
+          <div class="pjs">
+            <a href="https://github.com/hanzoai/enso">Enso</a>
+            <a href="https://github.com/hanzoai/mcp">MCP</a>
+            <a href="https://github.com/hanzoai/gateway">Gateway</a>
+            <a href="https://github.com/hanzoai/code">Code</a>
+            <a href="https://github.com/hanzoai/agents">Agents</a>
+            <a href="https://github.com/hanzoai/guard">Guard</a>
+            <a href="https://github.com/hanzoai/node">Node</a>
+            <a href="https://github.com/hanzoai/desktop">Desktop</a>
+            <a href="https://github.com/zenlm/zen4">Zen4</a>
+            <a href="https://github.com/zenlm/zen-omni">Omni</a>
+            <a href="https://github.com/zenlm/engine">Engine</a>
+            <a href="https://github.com/zenlm/gym">Gym</a>
+            <a href="https://github.com/zenlm/enso">Enso MUEN</a>
+            <a href="https://github.com/zenlm/jin">Jin</a>
+            <a href="https://github.com/zenlm/satori">Satori</a>
+            <a href="https://github.com/zenlm/mu">Mu</a>
+            <a href="https://github.com/zenlm/zen-3d">Zen 3D</a>
+            <a href="https://github.com/zenlm/zen-world">World</a>
+          </div>
+        </div>
+        <div class="rcard">
+          <h3>Post-Quantum Crypto <span class="tag">luxfi</span></h3>
+          <p>Lattice-based signatures, threshold schemes, and quantum-safe networking. Dilithium (ML-DSA) on-chain verification.</p>
+          <div class="pjs">
+            <a href="https://github.com/luxfi/precompile">ML-DSA Precompile</a>
+            <a href="https://github.com/luxfi/crystals-go">CRYSTALS</a>
+            <a href="https://github.com/luxfi/mlkem768">ML-KEM</a>
+            <a href="https://github.com/luxfi/safe-frost">FROST</a>
+            <a href="https://github.com/luxfi/threshold">Threshold</a>
+            <a href="https://github.com/luxfi/lamport">Lamport</a>
+            <a href="https://github.com/luxfi/ringtail">Ringtail</a>
+            <a href="https://github.com/luxfi/qzmq">QZMQ</a>
+            <a href="https://github.com/luxfi/libp2p">libp2p PQ</a>
+            <a href="https://github.com/luxfi/crypto">Crypto</a>
+            <a href="https://github.com/hanzoai/hanzo-crypto">Hanzo Crypto</a>
+          </div>
+        </div>
+        <div class="rcard">
+          <h3>FHE <span class="tag">luxfi</span></h3>
+          <p>Fully Homomorphic Encryption. GPU-accelerated compute on encrypted data, on-chain confidential smart contracts.</p>
+          <div class="pjs">
+            <a href="https://github.com/luxfi/fhe">FHE</a>
+            <a href="https://github.com/luxfi/fhe-gpu">FHE GPU</a>
+            <a href="https://github.com/luxfi/fhevm">FHEVM</a>
+            <a href="https://github.com/luxfi/fhe-compiler">Compiler</a>
+            <a href="https://github.com/luxfi/fhe-ml">FHE ML</a>
+            <a href="https://github.com/luxfi/torus">Torus</a>
+            <a href="https://github.com/luxfi/fhe-threshold">Threshold</a>
+            <a href="https://github.com/luxfi/zchain">Z-Chain</a>
+          </div>
+        </div>
+        <div class="rcard">
+          <h3>Zero Knowledge <span class="tag">luxfi</span></h3>
+          <p>ZK proofs for private payments, trustless bridges, and cross-chain interoperability.</p>
+          <div class="pjs">
+            <a href="https://github.com/luxfi/zpay">ZPay</a>
+            <a href="https://github.com/luxfi/teleport">Teleport</a>
+            <a href="https://github.com/luxfi/standard">Standard</a>
+            <a href="https://github.com/luxfi/multi-party-ecdsa">MPC ECDSA</a>
+            <a href="https://github.com/luxfi/zkvm-benchmarks">zkVM</a>
+            <a href="https://github.com/hanzoai/mpc">MPC</a>
+          </div>
+        </div>
+        <div class="rcard">
+          <h3>Blockchain & Consensus <span class="tag">luxfi</span></h3>
+          <p>Multi-consensus architecture with Snow, DAG, and classical protocols. Quasar consensus engine.</p>
+          <div class="pjs">
+            <a href="https://github.com/luxfi/node">Node</a>
+            <a href="https://github.com/luxfi/consensus">Quasar</a>
+            <a href="https://github.com/luxfi/evm">EVM</a>
+            <a href="https://github.com/luxfi/wallet">Wallet</a>
+            <a href="https://github.com/luxfi/bridge">Bridge</a>
+            <a href="https://github.com/luxfi/market">Market</a>
+            <a href="https://github.com/luxfi/bank">Bank</a>
+            <a href="https://github.com/luxfi/safe">Safe</a>
+            <a href="https://github.com/luxfi/stack">Stack</a>
+          </div>
+        </div>
+        <div class="rcard">
+          <h3>DeAI & DeSci <span class="tag">zoo-labs</span></h3>
+          <p>Open research networks, decentralized governance, community-driven AI infrastructure.</p>
+          <div class="pjs">
+            <a href="https://zips.zoo.ngo">ZIPs</a>
+            <a href="https://github.com/zoo-labs/zoo">Zoo</a>
+            <a href="https://github.com/zoo-labs/network">Network</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ZAP Protocol</h2>
+      <div class="rcard" style="border:1px solid var(--border);border-radius:8px;">
+        <h3>Zero-Copy App Proto</h3>
+        <p>High-performance serialization &amp; RPC for AI agent communication. Schema compiler with codegen for 20+ languages.</p>
+        <div class="pjs">
+          <a href="https://github.com/zeekay/zap">Spec</a>
+          <a href="https://github.com/zeekay/zap-go">Go</a>
+          <a href="https://github.com/zeekay/zap-rust">Rust</a>
+          <a href="https://github.com/zeekay/zap-py">Python</a>
+          <a href="https://github.com/zeekay/zap-js">JS/TS</a>
+          <a href="https://github.com/zeekay/zap-cpp">C++</a>
+          <a href="https://github.com/zeekay/zap-c">C</a>
+          <a href="https://github.com/zeekay/zap-java">Java</a>
+          <a href="https://github.com/zeekay/zap-cs">.NET</a>
+          <a href="https://github.com/zeekay/zap-haskell">Haskell</a>
+          <a href="https://github.com/zeekay/zap-ocaml">OCaml</a>
+          <a href="https://github.com/zeekay/zap-scala">Scala</a>
+          <a href="https://github.com/zeekay/zap-erlang">Erlang</a>
+          <a href="https://github.com/zeekay/zap-nim">Nim</a>
+          <a href="https://github.com/zeekay/zap-dlang">D</a>
+          <a href="https://github.com/zeekay/zap-lua">Lua</a>
+          <a href="https://github.com/zeekay/zap-ruby">Ruby</a>
+          <a href="https://github.com/zeekay/zap-lsp">LSP</a>
+          <a href="https://github.com/zeekay/zap-vscode">VS Code</a>
+          <a href="https://github.com/zeekay/zap-vim">Vim</a>
+          <a href="https://github.com/zeekay/zap-wireshark">Wireshark</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Organizations</h2>
+      <div class="org-grid">
+        <a class="org-card" href="https://github.com/hanzoai"><div class="name">hanzoai</div><div class="role">CEO</div><div class="desc">Applied AI cloud, agents, MCP, LLM gateway</div></a>
+        <a class="org-card" href="https://github.com/luxfi"><div class="name">luxfi</div><div class="role">Chairman</div><div class="desc">Post-quantum blockchain, consensus, DeFi</div></a>
+        <a class="org-card" href="https://github.com/zenlm"><div class="name">zenlm</div><div class="role">Architect</div><div class="desc">Open foundation models, training, inference</div></a>
+        <a class="org-card" href="https://github.com/zoo-labs"><div class="name">zoo-labs</div><div class="role">Founder</div><div class="desc">DeAI research, decentralized science</div></a>
+        <a class="org-card" href="https://github.com/zeekay"><div class="name">zeekay</div><div class="role">Personal</div><div class="desc">Open source tools, protocols, experiments</div></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Top Projects</h2>
+      <div id="top-repos"></div>
+    </section>
+
+    <section>
+      <h2>Recent Activity</h2>
+      <div id="recent"></div>
+    </section>
+
+    <footer>
+      <a href="https://github.com/zeekay">github.com/zeekay</a>
+      &middot; data from <a href="https://github.com/zeekay/stats">zeekay/stats</a>
+      &middot; auto-updated daily
+    </footer>
+  </div>
+
+  <script>
+    const STATS = 'https://raw.githubusercontent.com/zeekay/stats/main/docs/data.json';
+
+    function fmt(n) {
+      if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+      if (Math.abs(n) >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+      return n.toLocaleString();
+    }
+
+    async function main() {
+      try {
+        const r = await fetch(STATS);
+        const j = await r.json();
+        render(j.data.zeekay);
+      } catch (e) { console.error(e); }
+    }
+
+    function render(d) {
+      const s = d.stats;
+      document.getElementById('s-commits').textContent = fmt(s.total_commits);
+      document.getElementById('s-years').textContent = s.years_coding.toFixed(1);
+      document.getElementById('s-repos').textContent = fmt(s.unique_repos);
+      document.getElementById('s-lines').textContent = fmt(s.net_loc_change);
+      document.getElementById('s-active').textContent = fmt(s.active_days);
+      document.getElementById('s-streak').textContent = s.longest_streak + 'd';
+      heatmap(d.daily || []);
+      yearly(s.yearly);
+      dow(s.day_of_week_stats);
+      repos(d.top_repos || []);
+      recent(d.recent || []);
+    }
+
+    function heatmap(daily) {
+      const el = document.getElementById('heatmap');
+      const now = new Date(), ago = new Date(now);
+      ago.setDate(ago.getDate() - 364);
+      const byDate = {};
+      daily.forEach(d => { byDate[d.date] = d.commits; });
+      const days = [];
+      for (let i = 0; i < 365; i++) {
+        const dt = new Date(ago); dt.setDate(dt.getDate() + i);
+        const k = dt.toISOString().split('T')[0];
+        days.push({ date: k, commits: byDate[k] || 0, day: dt.getDay() });
+      }
+      const mx = Math.max(...days.map(d => d.commits), 1);
+      const pad = Array(days[0].day).fill(null).concat(days);
+      let h = '';
+      for (let w = 0; w < Math.ceil(pad.length / 7); w++) {
+        h += '<div class="heatmap-week">';
+        for (let d = 0; d < 7; d++) {
+          const e = pad[w * 7 + d];
+          if (!e) { h += '<div class="heatmap-day"></div>'; continue; }
+          const r = e.commits / mx;
+          const l = e.commits === 0 ? '' : r < 0.25 ? 'l1' : r < 0.5 ? 'l2' : r < 0.75 ? 'l3' : 'l4';
+          h += '<div class="heatmap-day ' + l + '" title="' + e.date + ': ' + e.commits + '"></div>';
+        }
+        h += '</div>';
+      }
+      el.innerHTML = h;
+    }
+
+    function yearly(data) {
+      const el = document.getElementById('yearly');
+      const sorted = Object.entries(data).sort((a, b) => a[0].localeCompare(b[0]));
+      const mx = Math.max(...sorted.map(([, v]) => v.commits));
+      el.innerHTML = sorted.map(([yr, v]) => {
+        const ht = Math.max(4, (v.commits / mx) * 130);
+        const net = v.net_loc >= 0 ? '+' + fmt(v.net_loc) : fmt(v.net_loc);
+        return '<div class="year-col"><div class="year-tip"><strong>' + yr + '</strong><br>' +
+          fmt(v.commits) + ' commits<br>+' + fmt(v.additions) + ' / -' + fmt(v.deletions) +
+          '<br>net: ' + net + ' LOC<br>' + v.days_active + ' active days</div>' +
+          '<div class="year-bar" style="height:' + ht + 'px"></div>' +
+          '<div class="year-label">' + yr + '</div></div>';
+      }).join('');
+    }
+
+    function dow(data) {
+      const el = document.getElementById('dow');
+      const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+      const mx = Math.max(...Object.values(data));
+      el.innerHTML = days.map(d => {
+        const v = data[d] || 0, ht = Math.max(4, (v / mx) * 65);
+        return '<div class="dow-col"><div class="dow-bar" style="height:' + ht + 'px" title="' + d + ': ' + fmt(v) + '"></div><div class="dow-label">' + d.slice(0,3) + '</div></div>';
+      }).join('');
+    }
+
+    function repos(data) {
+      const el = document.getElementById('top-repos');
+      el.innerHTML = data.slice(0, 15).map(r => {
+        const span = r.first_commit && r.last_commit ? r.first_commit.slice(0,4) + '\u2013' + r.last_commit.slice(0,4) : '';
+        return '<div class="repo-row"><a href="https://github.com/' + r.repo + '">' + r.repo + '</a>' +
+          '<div class="c">' + fmt(r.commits) + '</div><div class="d">' + span + '</div>' +
+          '<div class="loc"><span class="add">+' + fmt(r.additions) + '</span> <span class="del">-' + fmt(r.deletions) + '</span></div></div>';
+      }).join('');
+    }
+
+    function recent(data) {
+      const el = document.getElementById('recent');
+      el.innerHTML = data.slice(0, 20).map(r =>
+        '<div class="activity-item"><div class="date">' + r.date + '</div><div><span class="repo">' + r.repo +
+        '</span> <span class="msg">' + r.message + '</span></div><div class="loc"><span class="add">+' +
+        fmt(r.additions) + '</span> <span class="del">-' + fmt(r.deletions) + '</span></div></div>'
+      ).join('');
+    }
+
+    main();
+  </script>
+</body>
 </html>
